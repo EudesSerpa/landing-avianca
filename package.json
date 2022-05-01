@@ -1,0 +1,16 @@
+{
+  "name": "avianca-landing-page",
+  "version": "1.0.0",
+  "description": "Prueba tecnica Guayano\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Aguayano: Landing Avianca Airlines",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "HTML5",
+    "CSS3",
+    "Frontend"
+  ],
+  "author": "Eudes Serpa M",
+  "license": "MIT"
+}

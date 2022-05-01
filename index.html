@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avianca Airlines</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav wrapper">
+        <a href="/">
+          <img
+            src="./images/logo.png"
+            alt="Avianca Airlines"
+            class="header__logo"
+          />
+        </a>
+
+        <ul class="header__menu--list">
+          <li>
+            <a href="/">El programa</a>
+          </li>
+          <li>
+            <a href="#">Inscripción</a>
+          </li>
+        </ul>
+
+        <div class="header__menu--icon-mobile">
+          <img src="./images/menu.png" alt="Menu" />
+          <!-- Missing: Icon to close the menu -->
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <picture>
+        <source
+          media="(min-width: 768px)"
+          srcset="./images/hero_larger_img.png"
+          class="hero__image"
+        />
+        <img src="./images/hero_img.png" alt="Hero cover" class="hero__image" />
+      </picture>
+
+      <div class="hero__content">
+        <h1 class="hero__title">Volamos para que tú puedas volar.</h1>
+
+        <p class="hero__text">
+          Avianca Corporate organiza todo lo que necesitas para tu viaje.
+        </p>
+      </div>
+    </section>
+
+    <main class="main wrapper">
+      <section class="find-flight">
+        <h2 class="find-flight__title">Busca tu vuelo</h2>
+
+        <form class="find-flight__form">
+          <div class="find-flight__form--routes">
+            <label for="round-trip">
+              <input
+                type="radio"
+                name="routes"
+                id="round-trip"
+                value="round-trip"
+              />
+              <span>Ida y Regreso</span>
+            </label>
+
+            <label for="one-way">
+              <input type="radio" name="routes" id="one-way" value="one-way" />
+              <span>Solo ida</span>
+            </label>
+
+            <label for="multi-city">
+              <input
+                type="radio"
+                name="routes"
+                id="multi-city"
+                value="multi-city"
+              />
+              <span>Varias ciudades</span>
+            </label>
+          </div>
+
+          <div
+            class="find-flight__form--locations find-flight__form--input-container"
+          >
+            <div>
+              <label for="origin">Desde</label>
+              <input
+                type="text"
+                id="origin"
+                name="origin"
+                placeholder="Bogotá D.C. (BOG)"
+              />
+            </div>
+
+            <button type="button" class="swap-locations">
+              <img
+                src="./images/swap_arrow-right.svg"
+                alt=""
+                width="16px"
+                height="12px"
+              />
+              <img
+                src="./images/swap_arrow-left.svg"
+                alt=""
+                width="16px"
+                height="12px"
+              />
+            </button>
+
+            <div>
+              <label for="destination">Destino</label>
+              <input
+                type="text"
+                id="destination"
+                name="destination"
+                placeholder="Dallas (DFW)"
+              />
+            </div>
+          </div>
+
+          <div class="find-flight__form--input-container">
+            <label for="passengers-and-class">Pasajeros y Clase</label>
+            <select name="passengers-and-class" id="passengers-and-class">
+              <option value="1, economica" selected>1 adulto, económica</option>
+              <option value="2, economica">2 adulto, económica</option>
+            </select>
+          </div>
+
+          <div class="find-flight__form--input-container">
+            <label for="date-out">Fecha de Salida</label>
+            <input type="date" name="date-out" id="date-out" />
+          </div>
+
+          <div class="find-flight__form--input-container">
+            <label for="date-back">Fecha de Regreso</label>
+            <input type="date" name="date-back" id="date-back" />
+          </div>
+
+          <div
+            class="find-flight__form--promocional-code find-flight__form--input-container"
+          >
+            <img src="" alt="" />
+            <a href="#">Tengo un código promocional</a>
+          </div>
+
+          <button class="find-flight__form--submit">Busca tu vuelo</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
