@@ -54,7 +54,7 @@
     </section>
 
     <main class="main wrapper">
-      <section class="find-flight">
+      <section class="find-flight section">
         <h2 class="find-flight__title">Busca tu vuelo</h2>
 
         <form class="find-flight__form">
@@ -65,6 +65,7 @@
                 name="routes"
                 id="round-trip"
                 value="round-trip"
+                checked
               />
               <span>Ida y Regreso</span>
             </label>
@@ -98,7 +99,7 @@
               />
             </div>
 
-            <button type="button" class="swap-locations">
+            <button type="button" class="swap-locations--button swap-icon">
               <img
                 src="./images/swap_arrow-right.svg"
                 alt=""
@@ -134,24 +135,300 @@
 
           <div class="find-flight__form--input-container">
             <label for="date-out">Fecha de Salida</label>
-            <input type="date" name="date-out" id="date-out" />
+            <input
+              type="date"
+              name="date-out"
+              id="date-out"
+              value="2021-03-16"
+            />
           </div>
 
           <div class="find-flight__form--input-container">
             <label for="date-back">Fecha de Regreso</label>
-            <input type="date" name="date-back" id="date-back" />
+            <input
+              type="date"
+              name="date-back"
+              id="date-back"
+              value="2021-04-14"
+            />
           </div>
 
           <div
             class="find-flight__form--promocional-code find-flight__form--input-container"
           >
-            <img src="" alt="" />
-            <a href="#">Tengo un código promocional</a>
+            <a href="#">
+              <svg
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+                class="promocional-code--icon"
+                aria-hidden="true"
+              >
+                <circle cx="50" cy="50" r="50" fill="currentColor" />
+                <line x1="25" y1="50" x2="75" y2="50" stroke-width="10"></line>
+                <line x1="50" y1="25" x2="50" y2="75" stroke-width="10"></line>
+              </svg>
+
+              <span class="link-more-options">Tengo un código promocional</span>
+            </a>
           </div>
 
-          <button class="find-flight__form--submit">Busca tu vuelo</button>
+          <button class="cta--button">Busca tu vuelo</button>
         </form>
       </section>
+
+      <section class="recommendations section">
+        <header class="recommendations__header">
+          <h2 class="section-title">Recomendaciones para ti</h2>
+
+          <a href="#" class="link-more-options">
+            <span>Configura tus recomendaciones</span>
+            <img src="./images/pointer_right.svg" alt="" aria-hidden="true" />
+          </a>
+        </header>
+
+        <div class="recommendations__list-cards">
+          <button class="carousel-button carousel-button--prev" disabled>
+            <img
+              src="./images/carousel_arrow_left.svg"
+              alt="Flecha izquierda"
+              width="16px"
+              height="29px"
+            />
+          </button>
+
+          <button class="carousel-button carousel-button--next">
+            <img
+              src="./images/carousel_arrow_right.svg"
+              alt="Flecha derecha"
+              width="16px"
+              height="29px"
+            />
+          </button>
+
+          <div class="recommendations__list-cards--carousel">
+            <article class="card">
+              <header class="card__header">
+                <img src="./images/card_001.png" alt="Bogota - New York" />
+              </header>
+
+              <div class="card__details">
+                <div class="card__details__route">
+                  <div class="card__details__route--origin">
+                    <p class="country">Bogotá</p>
+                    <span class="acronym">BOG</span>
+                  </div>
+
+                  <i class="swap-icon" aria-hidden="true">
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16px"
+                      height="12px"
+                    >
+                      <path
+                        d="M10.9 0L9.772 1.10786L13.436 4.71429H0.5V6.28571H13.436L9.764 9.89214L10.9 11L16.5 5.5L10.9 0Z"
+                        fill="#9B9B9B"
+                      />
+                    </svg>
+
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16px"
+                      height="12px"
+                    >
+                      <path
+                        d="M6.1 11L7.228 9.89214L3.564 6.28571L16.5 6.28571L16.5 4.71429L3.564 4.71429L7.236 1.10786L6.1 4.44774e-08L0.499999 5.5L6.1 11Z"
+                        fill="#9B9B9B"
+                      />
+                    </svg>
+                  </i>
+
+                  <div class="card__details__route--destination">
+                    <p class="country">Nueva York</p>
+                    <span class="acronym">JKF</span>
+                  </div>
+                </div>
+
+                <div class="card__details__price">
+                  <p>Desde:</p>
+                  <span class="price">$879, 890</span>
+                  <span class="currency">COP</span>
+                </div>
+
+                <div class="card__details__info">
+                  <img src="./images/plane.svg" alt="" aria-hidden="true" />
+
+                  <p>Directo</p>
+
+                  <p>
+                    <time datetime="06-12">Jun. 12</time> -
+                    <time datetime="06-24">Jun. 24</time>
+                  </p>
+
+                  <p>12 días</p>
+                </div>
+
+                <button class="cta--button">Buscar vuelos</button>
+              </div>
+            </article>
+
+            <article class="card">
+              <header class="card__header">
+                <img src="./images/card_002.png" alt="Bogota - Sao Paulo" />
+              </header>
+
+              <div class="card__details">
+                <div class="card__details__route">
+                  <div class="card__details__route--origin">
+                    <p class="country">Bogotá</p>
+                    <span class="acronym">BOG</span>
+                  </div>
+
+                  <i class="swap-icon" aria-hidden="true">
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16px"
+                      height="12px"
+                    >
+                      <path
+                        d="M10.9 0L9.772 1.10786L13.436 4.71429H0.5V6.28571H13.436L9.764 9.89214L10.9 11L16.5 5.5L10.9 0Z"
+                        fill="#9B9B9B"
+                      />
+                    </svg>
+
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16px"
+                      height="12px"
+                    >
+                      <path
+                        d="M6.1 11L7.228 9.89214L3.564 6.28571L16.5 6.28571L16.5 4.71429L3.564 4.71429L7.236 1.10786L6.1 4.44774e-08L0.499999 5.5L6.1 11Z"
+                        fill="#9B9B9B"
+                      />
+                    </svg>
+                  </i>
+
+                  <div class="card__details__route--destination">
+                    <p class="country">Sao Paulo</p>
+                    <span class="acronym">GRU</span>
+                  </div>
+                </div>
+
+                <div class="card__details__price">
+                  <p>Desde:</p>
+                  <span class="price">$929, 390</span>
+                  <span class="currency">COP</span>
+                </div>
+
+                <div class="card__details__info">
+                  <img src="./images/plane.svg" alt="" aria-hidden="true" />
+
+                  <p>1 Escala</p>
+
+                  <p>
+                    <time datetime="06-12">Jun. 12</time> -
+                    <time datetime="06-24">Jun. 24</time>
+                  </p>
+
+                  <p>12 días</p>
+                </div>
+
+                <button class="cta--button">Buscar vuelos</button>
+              </div>
+            </article>
+
+            <article class="card">
+              <header class="card__header">
+                <img src="./images/card_003.png" alt="Bogota - Santiago" />
+              </header>
+
+              <div class="card__details">
+                <div class="card__details__route">
+                  <div class="card__details__route--origin">
+                    <p class="country">Bogotá</p>
+                    <span class="acronym">BOG</span>
+                  </div>
+
+                  <i class="swap-icon" aria-hidden="true">
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16px"
+                      height="12px"
+                    >
+                      <path
+                        d="M10.9 0L9.772 1.10786L13.436 4.71429H0.5V6.28571H13.436L9.764 9.89214L10.9 11L16.5 5.5L10.9 0Z"
+                        fill="#9B9B9B"
+                      />
+                    </svg>
+
+                    <svg
+                      width="17"
+                      height="11"
+                      viewBox="0 0 17 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16px"
+                      height="12px"
+                    >
+                      <path
+                        d="M6.1 11L7.228 9.89214L3.564 6.28571L16.5 6.28571L16.5 4.71429L3.564 4.71429L7.236 1.10786L6.1 4.44774e-08L0.499999 5.5L6.1 11Z"
+                        fill="#9B9B9B"
+                      />
+                    </svg>
+                  </i>
+
+                  <div class="card__details__route--destination">
+                    <p class="country">Santiago</p>
+                    <span class="acronym">SCL</span>
+                  </div>
+                </div>
+
+                <div class="card__details__price">
+                  <p>Desde:</p>
+                  <span class="price">$799, 490</span>
+                  <span class="currency">COP</span>
+                </div>
+
+                <div class="card__details__info">
+                  <img src="./images/plane.svg" alt="" aria-hidden="true" />
+
+                  <p>Directo</p>
+
+                  <p>
+                    <time datetime="06-12">Jun. 12</time> -
+                    <time datetime="06-24">Jun. 24</time>
+                  </p>
+
+                  <p>12 días</p>
+                </div>
+
+                <button class="cta--button">Buscar vuelos</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="shoutcuts"></section>
     </main>
 
     <script src="./index.js"></script>
