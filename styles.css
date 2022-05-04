@@ -16,8 +16,8 @@
   /* Font-Sizes */
   --title-section: 3.6em;
   
-  --subtitle-size: 2.6em;
-  --subtitle-small-size: 2.4em;
+  --title-size: 2.6em;
+  --text-larger-size: 2.4em;
   
   --text-large-size: 2.2em;
   --text-medium-size: 1.8em;
@@ -90,7 +90,7 @@ input[type="radio"]:checked::after {
 
 .wrapper {
   width: 100%;
-  max-width: 960px;
+  max-width: 1200px;
   padding: 0 2em;
   margin: 0 auto;
 }
@@ -163,9 +163,16 @@ input[type="radio"]:checked::after {
   color: var(--text-white-color);
 }
 
+.separator {
+  display: none;
+  width: 1px;
+  height: 3em;
+  margin: 0 1em;
+  background-color: var(--border-color);
+}
 
 
-/* Header */
+/* --- Header --- */
 .header {
   position: relative;
   display: grid;
@@ -178,6 +185,7 @@ input[type="radio"]:checked::after {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
 }
 
 .header__logo {
@@ -219,6 +227,7 @@ input[type="radio"]:checked::after {
   text-align: center;
   font-weight: 700;
   font-size: var(--text-size);
+  cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
@@ -227,7 +236,7 @@ input[type="radio"]:checked::after {
 }
 
 
-/* Hero */
+/* --- Hero --- */
 .hero {
   position: relative;
   height: 300px;
@@ -243,7 +252,7 @@ input[type="radio"]:checked::after {
 .hero__content {
   position: absolute;
   bottom: 5%;
-  right: 4%;
+  right: 3%;
   width: 90%;
   max-width: 480px;
   padding: 18px 26px;
@@ -252,7 +261,7 @@ input[type="radio"]:checked::after {
 }
 
 .hero__title {
-  font-size: var(--subtitle-size);
+  font-size: var(--title-size);
   font-weight: 900;
   margin-bottom: .5em;
 }
@@ -280,7 +289,7 @@ input[type="radio"]:checked::after {
 }
 
 .find-flight__title {
-  font-size: var(--subtitle-small-size);
+  font-size: var(--text-larger-size);
   margin-bottom: 1em;
 }
 
@@ -479,7 +488,7 @@ input[type="radio"]:checked::after {
 .card__details__price .price {
   display: inline-block;
   margin-right: .1em;
-  font-size: var(--subtitle-small-size);
+  font-size: var(--text-larger-size);
   font-weight: 700;
 }
 
@@ -512,11 +521,15 @@ input[type="radio"]:checked::after {
 
 
 /* Shortcuts */
-.shortcuts__list-cards {
+.shortcuts__list-cards,
+.considerations__list-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+}
+
+.shortcuts__list-cards {
   padding: 0 1.7em;
 }
 
@@ -543,15 +556,11 @@ input[type="radio"]:checked::after {
 
 /* Considerations */
 .considerations__list-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   gap: 3.2em;
 }
 
 .considerations__card {
-  max-width: 465px;
+  max-width: 460px;
   padding: 3.2em;
   border: 1px solid var(--border-color);
 }
@@ -597,7 +606,7 @@ input[type="radio"]:checked::after {
 
 .footer h3 {
   color: var(--primary-color);
-  font-size: var(--subtitle-small-size);
+  font-size: var(--text-larger-size);
   margin-bottom: .8em;
 }
 
@@ -688,44 +697,105 @@ input[type="radio"]:checked::after {
   /* Footer menus: alig flex items in rows */
   .footer__menus-container {
     flex-wrap: nowrap;
-    justify-content: center;
     align-items: flex-start;
   }
 }
 
 @media screen and (min-width: 610px) {
+  .wrapper {
+    padding: 0 4em;
+  }
+  
+  /* Navbar for bigger than mobile devices */
+  .header__menu--icon-mobile {
+    display: none;
+  }
+
+  .header__menu--list {
+    position: initial;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2em;
+    height: 100%;
+    opacity: 1;
+    pointer-events: all;
+    background-color: initial;
+    transition: none;
+    z-index: initial;
+  }
+
+  .header__nav .header__menu--list li {
+    position: relative;
+    height: 100%;
+    border: none;
+  }
+
+  .header__nav .header__menu--list li.active::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-top: 7px solid var(--text-white-color);
+  }
+  
+  .header__menu--list li a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  
+  /* Hero  */
   .hero {
     height: 380px;
   }
   
   .hero__content .cta--button {
-    display: initial; /* Show the button */
+    display: initial; /* Show the cta button */
   }
   
   .recommendations__list-cards--carousel {
     gap: 4em; /* Better slide centering */
   }
   
+  /* Footer */
+  .footer .wrapper {
+    padding: 0 2em;
+  }
+
   .footer__logos-container > div {
     flex-direction: row;
     justify-content: space-between;
   }
 
-  /* Show the separator */
   .footer__logos-container .separator {
-    width: 1px;
-    height: 3em;
-    margin-top: -.5em;
-    background-color: var(--border-color);
+    display: initial; /* Show the separator */
+    margin-top: -0.5em;
   }
 }
 
 @media screen and (min-width: 768px) {
+  .wrapper {
+    width: 90%;
+    padding: 0 2em;
+  }
+  
+  /* Hero */
   .hero {
     height: 470px;
   }
 
-  /* Show brand name */
+  .hero__content {
+    right: 5%;
+  }
+
+  /* Find fligh centered */
+  .find-flight {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Footer: Show brands */
   .footer__logos.social-media {
     gap: 1.5em;
   }
@@ -739,5 +809,118 @@ input[type="radio"]:checked::after {
     display: initial;
     margin-left: .5em;
     font-size: var(--text-small-size);
+  }
+}
+
+@media screen and (min-width: 940px) {  
+  .hero__title {
+    margin-bottom: .6em;
+    font-size: var(--title-section);    
+  }
+
+  .hero__content .cta--button {
+    margin-top: 2em;
+  }
+
+  /* Find fligh form: flex in row */
+  .find-flight {
+    max-width: 960px;
+  }
+
+  .find-flight__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .find-flight__form .cta--button {
+    align-self: flex-end;
+    width: 250px;
+  }
+
+  .find-flight__form--flex, 
+  .find-flight__form--locations {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+  }
+
+  .find-flight__form--flex {
+    margin-right: 2em;
+  }
+
+  /* Shortcuts */
+  .shortcuts__list-cards {
+    justify-content: space-between;
+    gap: 2em;
+  }
+
+  .shortcuts__list-cards .separator {
+    display: initial; /* Show the separator */
+    align-self: center;
+    height: 10em;
+    margin: 0;
+  }
+
+  .shortcuts__card {
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero__content {
+    right: 7%;
+  }
+  
+  /* Recommendations: hide carousel */
+  .recommendations__list-cards--carousel {
+    justify-content: center;
+    gap: 1.5em;
+    padding: 0;
+    overflow: initial;
+  }
+
+  .recommendations__list-cards .carousel-button {
+    display: none;
+  }
+
+  .recommendations__list-cards--carousel .card {
+    min-width: initial;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .wrapper {
+    width: 80%;
+  }
+
+  /* Overlap the find flight with the hero */
+  .find-flight {
+    position: relative;
+    top: -8em;
+    background-color: var(--text-white-color);
+  }
+
+  /* Better positioning of the content hero 
+    and recommendation cards */
+  .hero__content {
+    right: 10%;
+    bottom: 20%;
+  }
+
+  .recommendations__list-cards--carousel {
+    gap: 4em;
+  }
+
+  .recommendations__list-cards--carousel .card {
+    min-width: 290px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .hero__content {
+    right: 15%;
   }
 }

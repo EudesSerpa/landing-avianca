@@ -10,6 +10,7 @@
     />
     <title>Avianca Airlines</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/svg+xml" href="./images/plane.svg" />
   </head>
   <body>
     <header class="header">
@@ -23,7 +24,7 @@
         </a>
 
         <ul class="header__menu--list">
-          <li>
+          <li class="active">
             <a href="/">El programa</a>
           </li>
           <li>
@@ -41,7 +42,7 @@
     <section class="hero">
       <picture>
         <source
-          media="(min-width: 768px)"
+          media="(min-width: 610px)"
           srcset="./images/hero_larger_img.png"
           class="hero__image"
         />
@@ -98,106 +99,110 @@
               </label>
             </div>
 
-            <div
-              class="find-flight__form--locations find-flight__form--input-container"
-            >
-              <div>
-                <label for="origin">Desde</label>
+            <div class="find-flight__form--flex">
+              <div
+                class="find-flight__form--locations find-flight__form--input-container"
+              >
+                <div>
+                  <label for="origin">Desde</label>
+                  <input
+                    type="text"
+                    id="origin"
+                    name="origin"
+                    placeholder="Bogotá D.C. (BOG)"
+                  />
+                </div>
+
+                <button type="button" class="swap-locations--button swap-icon">
+                  <img
+                    src="./images/swap_arrow-right.svg"
+                    alt=""
+                    width="16"
+                    height="12"
+                  />
+                  <img
+                    src="./images/swap_arrow-left.svg"
+                    alt=""
+                    width="16"
+                    height="12"
+                  />
+                </button>
+
+                <div>
+                  <label for="destination">Destino</label>
+                  <input
+                    type="text"
+                    id="destination"
+                    name="destination"
+                    placeholder="Dallas (DFW)"
+                  />
+                </div>
+              </div>
+
+              <div class="find-flight__form--input-container">
+                <label for="passengers-and-class">Pasajeros y Clase</label>
+                <select name="passengers-and-class" id="passengers-and-class">
+                  <option value="1-adulto-economica" selected>
+                    1 adulto, económica
+                  </option>
+                  <option value="2-adulto-economica">
+                    2 adultos, económica
+                  </option>
+                </select>
+              </div>
+
+              <div class="find-flight__form--input-container">
+                <label for="date-out">Fecha de Salida</label>
                 <input
-                  type="text"
-                  id="origin"
-                  name="origin"
-                  placeholder="Bogotá D.C. (BOG)"
+                  type="date"
+                  name="date-out"
+                  id="date-out"
+                  value="2021-03-16"
                 />
               </div>
 
-              <button type="button" class="swap-locations--button swap-icon">
-                <img
-                  src="./images/swap_arrow-right.svg"
-                  alt=""
-                  width="16"
-                  height="12"
-                />
-                <img
-                  src="./images/swap_arrow-left.svg"
-                  alt=""
-                  width="16"
-                  height="12"
-                />
-              </button>
-
-              <div>
-                <label for="destination">Destino</label>
+              <div class="find-flight__form--input-container">
+                <label for="date-back">Fecha de Regreso</label>
                 <input
-                  type="text"
-                  id="destination"
-                  name="destination"
-                  placeholder="Dallas (DFW)"
+                  type="date"
+                  name="date-back"
+                  id="date-back"
+                  value="2021-04-14"
                 />
               </div>
-            </div>
 
-            <div class="find-flight__form--input-container">
-              <label for="passengers-and-class">Pasajeros y Clase</label>
-              <select name="passengers-and-class" id="passengers-and-class">
-                <option value="1, economica" selected>
-                  1 adulto, económica
-                </option>
-                <option value="2, economica">2 adulto, económica</option>
-              </select>
-            </div>
+              <div
+                class="find-flight__form--promocional-code find-flight__form--input-container"
+              >
+                <a href="#" class="link-more-options">
+                  <svg
+                    viewBox="0 0 100 100"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="promocional-code--icon"
+                    aria-hidden="true"
+                  >
+                    <circle cx="50" cy="50" r="50" fill="currentColor" />
+                    <line
+                      x1="25"
+                      y1="50"
+                      x2="75"
+                      y2="50"
+                      stroke-width="10"
+                    ></line>
+                    <line
+                      x1="50"
+                      y1="25"
+                      x2="50"
+                      y2="75"
+                      stroke-width="10"
+                    ></line>
+                  </svg>
 
-            <div class="find-flight__form--input-container">
-              <label for="date-out">Fecha de Salida</label>
-              <input
-                type="date"
-                name="date-out"
-                id="date-out"
-                value="2021-03-16"
-              />
-            </div>
-
-            <div class="find-flight__form--input-container">
-              <label for="date-back">Fecha de Regreso</label>
-              <input
-                type="date"
-                name="date-back"
-                id="date-back"
-                value="2021-04-14"
-              />
-            </div>
-
-            <div
-              class="find-flight__form--promocional-code find-flight__form--input-container"
-            >
-              <a href="#" class="link-more-options">
-                <svg
-                  viewBox="0 0 100 100"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="promocional-code--icon"
-                  aria-hidden="true"
-                >
-                  <circle cx="50" cy="50" r="50" fill="currentColor" />
-                  <line
-                    x1="25"
-                    y1="50"
-                    x2="75"
-                    y2="50"
-                    stroke-width="10"
-                  ></line>
-                  <line
-                    x1="50"
-                    y1="25"
-                    x2="50"
-                    y2="75"
-                    stroke-width="10"
-                  ></line>
-                </svg>
-
-                <span class="link-more-options"
-                  >Tengo un código promocional</span
-                >
-              </a>
+                  <span class="link-more-options"
+                    >Tengo un código promocional</span
+                  >
+                </a>
+              </div>
             </div>
 
             <button class="cta--button">Busca tu vuelo</button>
@@ -480,6 +485,8 @@
               </div>
             </article>
 
+            <div class="separator"></div>
+
             <article class="shortcuts__card">
               <div class="shortcuts__card__icon">
                 <img src="./images/lupa_shortcus-icon.svg" alt="" />
@@ -507,6 +514,8 @@
                 </footer>
               </div>
             </article>
+
+            <div class="separator"></div>
 
             <article class="shortcuts__card">
               <div class="shortcuts__card__icon">
@@ -763,10 +772,20 @@
             Avianca S.A. - 2020 Copyright © Todos los derechos reservados. NIT
             890.100.577-6. RNT 20175
           </p>
+
+          <a
+            href="http://jigsaw.w3.org/css-validator/check/referer"
+            class="check-css--icon"
+          >
+            <img
+              style="width: 60px; height: 25px; margin-top: 1em; border: 0"
+              src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+              alt="¡CSS Válido!"
+            />
+          </a>
         </div>
       </div>
     </footer>
-
     <script src="./index.js"></script>
   </body>
 </html>
